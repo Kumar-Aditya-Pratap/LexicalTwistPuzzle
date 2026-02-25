@@ -14,6 +14,12 @@ public class LexicalTwistPuzzle {
         System.out.print("Enter second word: ");
         String secondWord = scanner.nextLine();
 
-        // Just storing inputs for now (no validation yet)
+        // Validation: Check single-word constraint
+        if (firstWord.contains(" ") || secondWord.contains(" ")) {
+            System.out.println("Invalid input: Only single words allowed.");
+            return;   // Graceful termination (No System.exit)
+        }
+
+        System.out.println("Inputs accepted successfully.");
     }
 }
