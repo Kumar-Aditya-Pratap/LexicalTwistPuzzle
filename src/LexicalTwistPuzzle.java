@@ -34,8 +34,24 @@ public class LexicalTwistPuzzle {
             System.out.println(transformed);
 
         } else {
-            System.out.println("The words are not reverse of each other.");
+
+            String combined = (firstWord + secondWord).toUpperCase();
+
+            int vowelCount = 0;
+            int consonantCount = 0;
+
+            for (char ch : combined.toCharArray()) {
+                if ("AEIOU".indexOf(ch) != -1) {
+                    vowelCount++;
+                } else if (Character.isLetter(ch)) {
+                    consonantCount++;
+                }
+            }
+
+            System.out.println("Vowels: " + vowelCount);
+            System.out.println("Consonants: " + consonantCount);
         }
+
 
     }
 }
